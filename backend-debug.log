@@ -1,0 +1,1182 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-06-07T17:41:45.757+01:00  INFO 17244 --- [           main] com.gamevault.GameVaultApplication       : Starting GameVaultApplication using Java 25.0.2 with PID 17244 (C:\Users\David\gamevault-backend\target\classes started by David in C:\Users\David\gamevault-backend)
+2026-06-07T17:41:45.760+01:00  INFO 17244 --- [           main] com.gamevault.GameVaultApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-06-07T17:41:46.321+01:00  INFO 17244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-07T17:41:46.395+01:00  INFO 17244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 8 JPA repository interfaces.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/C:/Users/David/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.31/tomcat-embed-core-10.1.31.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-06-07T17:41:46.789+01:00  INFO 17244 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-07T17:41:46.799+01:00  INFO 17244 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-07T17:41:46.799+01:00  INFO 17244 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-06-07T17:41:46.844+01:00  INFO 17244 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-07T17:41:46.844+01:00  INFO 17244 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1035 ms
+2026-06-07T17:41:46.864+01:00  INFO 17244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-07T17:41:47.000+01:00  INFO 17244 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:gamevault user=SA
+2026-06-07T17:41:47.001+01:00  INFO 17244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-07T17:41:47.012+01:00  INFO 17244 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:gamevault'
+2026-06-07T17:41:47.093+01:00  INFO 17244 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-07T17:41:47.144+01:00  INFO 17244 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-07T17:41:47.167+01:00  INFO 17244 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-07T17:41:47.402+01:00  INFO 17244 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-07T17:41:47.433+01:00  WARN 17244 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-07T17:41:48.262+01:00  INFO 17244 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-07T17:41:48.315+01:00  INFO 17244 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-07T17:41:48.579+01:00  INFO 17244 --- [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-07T17:41:48.580+01:00  WARN 17244 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-07T17:41:48.600+01:00  INFO 17244 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-07T17:41:48.945+01:00  WARN 17244 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-07T17:41:49.046+01:00 DEBUG 17244 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2026-06-07T17:41:49.100+01:00 DEBUG 17244 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-06-07T17:41:49.127+01:00 DEBUG 17244 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-06-07T17:41:49.179+01:00 DEBUG 17244 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-07T17:41:49.200+01:00 DEBUG 17244 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-07T17:41:49.310+01:00  INFO 17244 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-06-07T17:41:49.315+01:00  INFO 17244 --- [           main] com.gamevault.GameVaultApplication       : Started GameVaultApplication in 3.826 seconds (process running for 4.061)
+2026-06-07T17:41:49.376+01:00  INFO 17244 --- [           main] com.gamevault.DataSeeder                 : Seeding GameVault database...
+2026-06-07T17:41:49.652+01:00  INFO 17244 --- [           main] com.gamevault.DataSeeder                 : Seed complete — users: 3, games: 7, lists: 2
+2026-06-07T17:41:58.139+01:00  INFO 17244 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-07T17:41:58.139+01:00  INFO 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-07T17:41:58.139+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-07T17:41:58.139+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-07T17:41:58.140+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2026-06-07T17:41:58.140+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5a67843b
+2026-06-07T17:41:58.140+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7ac47e87
+2026-06-07T17:41:58.142+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-07T17:41:58.142+01:00  INFO 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-06-07T17:41:58.151+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-06-07T17:41:58.156+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:41:58.158+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-06-07T17:41:58.160+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-06-07T17:41:58.161+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.AuthController#login(LoginRequest)
+2026-06-07T17:41:58.212+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=dvd-cruz, password=password123]]
+2026-06-07T17:41:58.394+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-06-07T17:41:58.457+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:41:58.460+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse[token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkdmQtY3J1eiIsInVzZXJJZCI6MSwiaWF0IjoxNzgwODUwNTE4 (truncated)...]
+2026-06-07T17:41:58.464+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:41:58.549+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T17:41:58.593+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T17:41:58.593+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T17:41:58.594+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T17:41:58.625+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:41:58.647+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T17:41:58.656+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:15.122+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-06-07T17:42:15.122+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:42:15.122+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-06-07T17:42:15.122+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-06-07T17:42:15.123+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.AuthController#login(LoginRequest)
+2026-06-07T17:42:15.124+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=dvd-cruz, password=password123]]
+2026-06-07T17:42:15.188+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-06-07T17:42:15.191+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:15.191+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse[token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkdmQtY3J1eiIsInVzZXJJZCI6MSwiaWF0IjoxNzgwODUwNTM1 (truncated)...]
+2026-06-07T17:42:15.192+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:15.255+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T17:42:15.258+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T17:42:15.258+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T17:42:15.259+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T17:42:15.262+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:15.262+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T17:42:15.263+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:15.328+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T17:42:15.330+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T17:42:15.330+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:42:15.330+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:42:15.344+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:15.345+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T17:42:15.345+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.283+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T17:42:21.285+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T17:42:21.285+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T17:42:21.286+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T17:42:21.293+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.294+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T17:42:21.295+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.296+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T17:42:21.300+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T17:42:21.300+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T17:42:21.300+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T17:42:21.302+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.302+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T17:42:21.303+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T17:42:21.303+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T17:42:21.304+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.308+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T17:42:21.308+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T17:42:21.310+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T17:42:21.310+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T17:42:21.310+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T17:42:21.310+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T17:42:21.314+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.314+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:42:21.315+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.315+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.316+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T17:42:21.317+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T17:42:21.318+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.319+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T17:42:21.319+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T17:42:21.320+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T17:42:21.320+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T17:42:21.324+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.325+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:42:21.326+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T17:42:21.326+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.326+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T17:42:21.326+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T17:42:21.332+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.334+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T17:42:21.336+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.337+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva
+2026-06-07T17:42:21.338+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T17:42:21.342+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva
+2026-06-07T17:42:21.342+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T17:42:21.343+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva", parameters={}
+2026-06-07T17:42:21.343+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T17:42:21.343+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T17:42:21.343+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#byUsername(String)
+2026-06-07T17:42:21.346+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.346+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserResponse[id=2, name=Ana Silva, username=anasilva, avatar=🧑‍🎤, bio=Platformers, JRPGs e complet (truncated)...]
+2026-06-07T17:42:21.347+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.347+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.348+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T17:42:21.348+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva
+2026-06-07T17:42:21.349+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.351+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva
+2026-06-07T17:42:21.351+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva", parameters={}
+2026-06-07T17:42:21.351+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#byUsername(String)
+2026-06-07T17:42:21.354+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.354+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserResponse[id=2, name=Ana Silva, username=anasilva, avatar=🧑‍🎤, bio=Platformers, JRPGs e complet (truncated)...]
+2026-06-07T17:42:21.355+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.358+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T17:42:21.363+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T17:42:21.364+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T17:42:21.364+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T17:42:21.367+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.367+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T17:42:21.368+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/friends/status/anasilva
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/blocks
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/blocks
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/blocks
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/blocks", parameters={}
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/friends/status/anasilva
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/friends/status/anasilva
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/friends/status/anasilva
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/blocks
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/blocks", parameters={}
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:42:21.381+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.382+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.382+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.385+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T17:42:21.385+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T17:42:21.390+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T17:42:21.390+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T17:42:21.390+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:42:21.390+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T17:42:21.392+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:42:21.392+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:42:21.395+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.396+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T17:42:21.396+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.397+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T17:42:21.397+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.397+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:42:21.398+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.399+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T17:42:21.400+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T17:42:21.400+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:42:21.400+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:42:21.401+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T17:42:21.402+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T17:42:21.402+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:42:21.405+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.406+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:21.406+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T17:42:21.406+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:42:21.407+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:21.407+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.859+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva
+2026-06-07T17:42:58.860+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T17:42:58.862+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T17:42:58.862+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva
+2026-06-07T17:42:58.862+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T17:42:58.862+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva", parameters={}
+2026-06-07T17:42:58.862+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#byUsername(String)
+2026-06-07T17:42:58.862+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T17:42:58.864+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.864+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserResponse[id=2, name=Ana Silva, username=anasilva, avatar=🧑‍🎤, bio=Platformers, JRPGs e complet (truncated)...]
+2026-06-07T17:42:58.865+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.866+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva
+2026-06-07T17:42:58.868+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.869+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva
+2026-06-07T17:42:58.869+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T17:42:58.869+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva", parameters={}
+2026-06-07T17:42:58.869+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#byUsername(String)
+2026-06-07T17:42:58.870+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.872+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T17:42:58.873+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.873+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserResponse[id=2, name=Ana Silva, username=anasilva, avatar=🧑‍🎤, bio=Platformers, JRPGs e complet (truncated)...]
+2026-06-07T17:42:58.874+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.875+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T17:42:58.875+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T17:42:58.876+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T17:42:58.880+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.881+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T17:42:58.881+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.893+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T17:42:58.893+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T17:42:58.895+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T17:42:58.895+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:42:58.895+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:42:58.896+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T17:42:58.896+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T17:42:58.896+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:42:58.898+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.899+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T17:42:58.899+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.899+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.900+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:42:58.900+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T17:42:58.900+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.901+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T17:42:58.902+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T17:42:58.902+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:42:58.902+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:42:58.902+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T17:42:58.903+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T17:42:58.903+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:42:58.904+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.904+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:42:58.905+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:42:58.905+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:42:58.905+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T17:42:58.906+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:43:05.531+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/friends/requests/anasilva
+2026-06-07T17:43:05.531+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:43:05.531+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/friends/requests/anasilva
+2026-06-07T17:43:05.531+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/friends/requests/anasilva", parameters={}
+2026-06-07T17:43:05.532+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#sendRequest(UserPrincipal, String)
+2026-06-07T17:43:05.533+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:43:05.577+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /api/friends/requests/anasilva
+2026-06-07T17:43:05.580+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /api/friends/requests/anasilva
+2026-06-07T17:43:05.580+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/friends/requests/anasilva", parameters={}
+2026-06-07T17:43:05.580+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#sendRequest(UserPrincipal, String)
+2026-06-07T17:43:05.602+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:43:05.603+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendRequestResponse[id=1, fromUser=UserResponse[id=1, name=David Cruz, username=dvd-cruz, avatar=? (truncated)...]
+2026-06-07T17:43:05.603+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2026-06-07T17:43:15.102+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-06-07T17:43:15.102+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:43:15.102+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-06-07T17:43:15.102+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-06-07T17:43:15.102+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.AuthController#login(LoginRequest)
+2026-06-07T17:43:15.104+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=dvd-cruz, password=password123]]
+2026-06-07T17:43:15.178+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-06-07T17:43:15.180+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:43:15.181+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse[token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkdmQtY3J1eiIsInVzZXJJZCI6MSwiaWF0IjoxNzgwODUwNTk1 (truncated)...]
+2026-06-07T17:43:15.182+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:43:15.223+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T17:43:15.225+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T17:43:15.225+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:43:15.225+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:43:15.227+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:43:15.227+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=PENDING_SENT, requestId=1]]
+2026-06-07T17:43:15.228+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:43:15.290+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-06-07T17:43:15.290+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:43:15.290+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-06-07T17:43:15.290+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-06-07T17:43:15.290+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.AuthController#login(LoginRequest)
+2026-06-07T17:43:15.291+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=anasilva, password=password123]]
+2026-06-07T17:43:15.370+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-06-07T17:43:15.372+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:43:15.372+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse[token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbmFzaWx2YSIsInVzZXJJZCI6MiwiaWF0IjoxNzgwODUwNTk1 (truncated)...]
+2026-06-07T17:43:15.373+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:43:15.446+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/requests
+2026-06-07T17:43:15.449+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/requests
+2026-06-07T17:43:15.450+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/requests", parameters={}
+2026-06-07T17:43:15.450+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#requests(UserPrincipal)
+2026-06-07T17:43:15.454+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:43:15.455+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[FriendRequestResponse[id=1, fromUser=UserResponse[id=1, name=David Cruz, username=dvd-cruz, avatar= (truncated)...]
+2026-06-07T17:43:15.455+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:43:24.351+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/friends/anasilva
+2026-06-07T17:43:24.351+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:43:24.351+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/friends/anasilva
+2026-06-07T17:43:24.351+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/friends/anasilva", parameters={}
+2026-06-07T17:43:24.351+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#remove(UserPrincipal, String)
+2026-06-07T17:43:24.352+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:43:24.355+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing DELETE /api/friends/anasilva
+2026-06-07T17:43:24.358+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured DELETE /api/friends/anasilva
+2026-06-07T17:43:24.359+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DELETE "/api/friends/anasilva", parameters={}
+2026-06-07T17:43:24.359+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#remove(UserPrincipal, String)
+2026-06-07T17:43:24.375+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-06-07T17:44:37.683+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/reports/anasilva
+2026-06-07T17:44:37.683+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:44:37.683+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/reports/anasilva
+2026-06-07T17:44:37.684+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/reports/anasilva", parameters={}
+2026-06-07T17:44:37.684+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.ReportController#report(UserPrincipal, String, ReportRequest)
+2026-06-07T17:44:37.685+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:44:37.688+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/reports/anasilva
+2026-06-07T17:44:37.690+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/reports/anasilva
+2026-06-07T17:44:37.690+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/reports/anasilva", parameters={}
+2026-06-07T17:44:37.690+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.ReportController#report(UserPrincipal, String, ReportRequest)
+2026-06-07T17:44:37.693+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ReportRequest[reason=Assédio ou comportamento abusivo, description=]]
+2026-06-07T17:44:37.709+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-06-07T17:44:52.399+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-06-07T17:44:52.399+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:44:52.399+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-06-07T17:44:52.399+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-06-07T17:44:52.399+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.AuthController#login(LoginRequest)
+2026-06-07T17:44:52.400+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=dvd-cruz, password=password123]]
+2026-06-07T17:44:52.478+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-06-07T17:44:52.480+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:44:52.480+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse[token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkdmQtY3J1eiIsInVzZXJJZCI6MSwiaWF0IjoxNzgwODUwNjky (truncated)...]
+2026-06-07T17:44:52.481+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:44:52.595+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /h2-console
+2026-06-07T17:44:52.595+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:44:52.595+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /h2-console
+2026-06-07T17:45:08.530+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/blocks/anasilva
+2026-06-07T17:45:08.531+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:45:08.531+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/blocks/anasilva
+2026-06-07T17:45:08.531+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/blocks/anasilva", parameters={}
+2026-06-07T17:45:08.531+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#block(UserPrincipal, String)
+2026-06-07T17:45:08.532+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:45:08.534+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /api/blocks/anasilva
+2026-06-07T17:45:08.536+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /api/blocks/anasilva
+2026-06-07T17:45:08.536+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/blocks/anasilva", parameters={}
+2026-06-07T17:45:08.536+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#block(UserPrincipal, String)
+2026-06-07T17:45:08.542+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-06-07T17:45:17.083+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-06-07T17:45:17.084+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:45:17.084+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-06-07T17:45:17.084+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-06-07T17:45:17.084+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.AuthController#login(LoginRequest)
+2026-06-07T17:45:17.085+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=dvd-cruz, password=password123]]
+2026-06-07T17:45:17.156+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-06-07T17:45:17.158+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:45:17.158+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse[token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkdmQtY3J1eiIsInVzZXJJZCI6MSwiaWF0IjoxNzgwODUwNzE3 (truncated)...]
+2026-06-07T17:45:17.159+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:45:17.230+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T17:45:17.233+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T17:45:17.233+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T17:45:17.233+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:45:17.237+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:45:17.237+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[UserResponse[id=2, name=Ana Silva, username=anasilva, avatar=🧑‍🎤, bio=Platformers, JRPGs e comple (truncated)...]
+2026-06-07T17:45:17.237+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:45:25.114+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing DELETE /api/blocks/anasilva
+2026-06-07T17:45:25.116+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured DELETE /api/blocks/anasilva
+2026-06-07T17:45:25.116+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : DELETE "/api/blocks/anasilva", parameters={}
+2026-06-07T17:45:25.116+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#unblock(UserPrincipal, String)
+2026-06-07T17:45:25.122+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-06-07T17:45:34.154+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-06-07T17:45:34.154+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:45:34.154+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-06-07T17:45:34.155+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-06-07T17:45:34.155+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.AuthController#login(LoginRequest)
+2026-06-07T17:45:34.156+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=dvd-cruz, password=password123]]
+2026-06-07T17:45:34.219+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-06-07T17:45:34.221+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:45:34.221+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse[token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkdmQtY3J1eiIsInVzZXJJZCI6MSwiaWF0IjoxNzgwODUwNzM0 (truncated)...]
+2026-06-07T17:45:34.222+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:45:34.280+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T17:45:34.282+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T17:45:34.282+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T17:45:34.282+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T17:45:34.284+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:45:34.284+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:45:34.284+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:45:34.332+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T17:45:34.334+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T17:45:34.334+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T17:45:34.334+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T17:45:34.336+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:45:34.336+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T17:45:34.336+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.888+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T17:59:00.888+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T17:59:00.890+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T17:59:00.893+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.893+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.906+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T17:59:00.920+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T17:59:00.921+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T17:59:00.922+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T17:59:00.929+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:59:00.930+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T17:59:00.934+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.935+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T17:59:00.947+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T17:59:00.948+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T17:59:00.949+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T17:59:00.954+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:59:00.954+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T17:59:00.955+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.969+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.970+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.971+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T17:59:00.971+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.971+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T17:59:00.971+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T17:59:00.971+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T17:59:00.972+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T17:59:00.974+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.985+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T17:59:00.985+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T17:59:00.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T17:59:00.988+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T17:59:00.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T17:59:00.988+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T17:59:00.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T17:59:00.988+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T17:59:00.992+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:59:00.992+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:59:00.994+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:00.996+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T17:59:01.000+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:59:01.000+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T17:59:01.000+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T17:59:01.001+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T17:59:01.004+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T17:59:01.004+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:59:01.004+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T17:59:01.005+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:01.005+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T17:59:01.006+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T17:59:01.015+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T17:59:01.015+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T17:59:01.015+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T17:59:01.024+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T17:59:01.030+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T17:59:01.032+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.698+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T18:04:33.710+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T18:04:33.714+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:04:33.714+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:04:33.714+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T18:04:33.714+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T18:04:33.714+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T18:04:33.714+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T18:04:33.716+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:04:33.716+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:04:33.718+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.718+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.727+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:04:33.733+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:04:33.734+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:04:33.735+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:04:33.741+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.741+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:04:33.745+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.745+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:04:33.751+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:04:33.751+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:04:33.752+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:04:33.756+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.757+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:04:33.760+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.797+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T18:04:33.797+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:04:33.797+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T18:04:33.797+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T18:04:33.797+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:04:33.798+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.799+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T18:04:33.799+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:04:33.801+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T18:04:33.801+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T18:04:33.802+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:04:33.803+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.809+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:04:33.813+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:04:33.823+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:04:33.823+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:04:33.823+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:04:33.828+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:04:33.828+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:04:33.829+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:04:33.832+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.832+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:04:33.834+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.845+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.851+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:04:33.858+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:04:33.860+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.861+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:04:33.861+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:04:33.861+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:04:33.862+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:04:33.866+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.868+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:04:33.869+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.871+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:04:33.871+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:04:33.871+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:04:33.889+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.891+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:04:33.893+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.964+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva
+2026-06-07T18:04:33.965+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T18:04:33.972+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva
+2026-06-07T18:04:33.972+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva", parameters={}
+2026-06-07T18:04:33.974+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#byUsername(String)
+2026-06-07T18:04:33.975+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T18:04:33.975+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T18:04:33.976+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T18:04:33.981+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.981+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserResponse[id=2, name=Ana Silva, username=anasilva, avatar=🧑‍🎤, bio=Platformers, JRPGs e complet (truncated)...]
+2026-06-07T18:04:33.982+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:33.992+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva
+2026-06-07T18:04:33.992+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:33.999+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva
+2026-06-07T18:04:33.999+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva", parameters={}
+2026-06-07T18:04:33.999+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T18:04:33.999+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#byUsername(String)
+2026-06-07T18:04:34.000+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:34.002+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/users/anasilva/games
+2026-06-07T18:04:34.002+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:34.002+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserResponse[id=2, name=Ana Silva, username=anasilva, avatar=🧑‍🎤, bio=Platformers, JRPGs e complet (truncated)...]
+2026-06-07T18:04:34.003+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:34.014+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/users/anasilva/games
+2026-06-07T18:04:34.014+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/users/anasilva/games", parameters={}
+2026-06-07T18:04:34.014+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#gamesByUsername(String)
+2026-06-07T18:04:34.025+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:34.029+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=6, title=Celeste, emoji=🏔️, coverUrl=null, status=completed, platform=Switch, genr (truncated)...]
+2026-06-07T18:04:34.031+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:34.125+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T18:04:34.130+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T18:04:34.130+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T18:04:34.130+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T18:04:34.131+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T18:04:34.138+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T18:04:34.138+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T18:04:34.138+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T18:04:34.153+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:34.155+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:04:34.159+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:34.161+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/blocks
+2026-06-07T18:04:34.162+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:34.163+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T18:04:34.164+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/blocks
+2026-06-07T18:04:34.164+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/blocks", parameters={}
+2026-06-07T18:04:34.165+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.BlockController#list(UserPrincipal)
+2026-06-07T18:04:34.164+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:34.165+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/friends/status/anasilva
+2026-06-07T18:04:34.174+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:34.174+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:04:34.175+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/friends/status/anasilva
+2026-06-07T18:04:34.175+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/friends/status/anasilva", parameters={}
+2026-06-07T18:04:34.177+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.FriendshipController#status(UserPrincipal, String)
+2026-06-07T18:04:34.177+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:04:34.189+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:04:34.190+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [FriendStatusResponse[status=NONE, requestId=null]]
+2026-06-07T18:04:34.192+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:08:39.273+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:08:39.289+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:08:39.290+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:08:39.290+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:08:39.293+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:08:39.293+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:08:39.294+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:08:39.302+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:08:39.310+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:08:39.311+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:08:39.311+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:08:39.315+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:08:39.315+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:08:39.318+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:08:39.353+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:08:39.358+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:08:39.361+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:08:39.361+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:08:39.362+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:08:39.366+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:08:39.366+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:08:39.366+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:08:39.370+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:08:39.371+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:08:39.371+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:08:39.372+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:08:39.384+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:08:39.389+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:08:39.391+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:08:39.392+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:08:39.395+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:08:39.395+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:08:39.396+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:08:39.398+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:08:39.399+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:08:39.399+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:08:39.405+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:08:39.405+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:08:39.405+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:08:39.420+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:08:39.424+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:08:39.428+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:10:51.829+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:10:51.837+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:10:51.837+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:10:51.844+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:10:51.851+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:10:51.852+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:10:51.855+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:10:51.858+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:10:51.864+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:10:51.864+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:10:51.864+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:10:51.871+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:10:51.871+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:10:51.882+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:10:51.896+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:10:51.901+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:10:51.911+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:10:51.911+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:10:51.912+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:10:51.916+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:10:51.916+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:10:51.916+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:10:51.930+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:10:51.933+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:10:51.935+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:10:51.938+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:10:51.938+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:10:51.951+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:10:51.952+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:10:51.957+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:10:51.958+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:10:51.958+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:10:51.959+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:10:51.961+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:10:51.962+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:10:51.966+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:10:51.971+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:10:51.971+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:10:51.976+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:10:52.003+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:10:52.006+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:10:52.012+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:12:29.606+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:12:29.627+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:12:29.628+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:12:29.628+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:12:29.633+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:12:29.633+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:12:29.636+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:12:29.638+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:12:29.653+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:12:29.653+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:12:29.653+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:12:29.655+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:12:29.655+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:12:29.656+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:12:29.692+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:12:29.692+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:12:29.705+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:12:29.705+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:12:29.717+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:12:29.720+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:12:29.720+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:12:29.720+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:12:29.725+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:12:29.725+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:12:29.727+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:12:29.734+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:12:29.739+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:12:29.752+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:12:29.753+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:12:29.753+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:12:29.753+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:12:29.757+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:12:29.758+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:12:29.760+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:12:29.760+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:12:29.761+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:12:29.769+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:12:29.769+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:12:29.769+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:12:29.786+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:12:29.797+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:12:29.802+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:18:59.992+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:18:59.999+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:19:00.000+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:19:00.000+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:19:00.004+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:19:00.004+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:19:00.005+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:19:00.008+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:19:00.017+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:19:00.017+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:19:00.017+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:19:00.022+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:19:00.023+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:19:00.024+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:19:00.036+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:19:00.036+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:19:00.071+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:19:00.071+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:19:00.071+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:19:00.072+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:19:00.072+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:19:00.072+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:19:00.075+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:19:00.075+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:19:00.078+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:19:00.081+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:19:00.083+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:19:00.087+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:19:00.088+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:19:00.088+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:19:00.088+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:19:00.089+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:19:00.090+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:19:00.092+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:19:00.092+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:19:00.092+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:19:00.093+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:19:00.093+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:19:00.093+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:19:00.101+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:19:00.102+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=5, title=Zelda: TotK, emoji=🌍, coverUrl=null, status=wishlist, platform=Switch, ge (truncated)...]
+2026-06-07T18:19:00.103+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:19:51.347+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /api/games
+2026-06-07T18:19:51.359+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /api/games
+2026-06-07T18:19:51.359+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/games", parameters={}
+2026-06-07T18:19:51.359+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#create(UserPrincipal, GameRequest)
+2026-06-07T18:19:51.408+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameRequest[title=Balatro, emoji=null, coverUrl=null, status=wishlist, platform=PC, genre=Roguelite, (truncated)...]
+2026-06-07T18:19:51.461+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:19:51.461+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogue (truncated)...]
+2026-06-07T18:19:51.463+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2026-06-07T18:21:48.656+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:21:48.666+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:21:48.666+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:21:48.666+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:21:48.668+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:21:48.668+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:21:48.671+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:21:48.673+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:21:48.677+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:21:48.677+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:21:48.678+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:21:48.682+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:21:48.685+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:21:48.687+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:21:48.720+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:21:48.720+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:21:48.726+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:21:48.726+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:21:48.726+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:21:48.726+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:21:48.727+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:21:48.727+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:21:48.729+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:21:48.730+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:21:48.730+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:21:48.731+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:21:48.732+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:21:48.734+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:21:48.737+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:21:48.737+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:21:48.738+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:21:48.738+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:21:48.738+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:21:48.745+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:21:48.745+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:21:48.747+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:21:48.747+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:21:48.748+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:21:48.748+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:21:48.763+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:21:48.766+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:21:48.768+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.864+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T18:35:16.864+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T18:35:16.865+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:35:16.865+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T18:35:16.865+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:35:16.865+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T18:35:16.865+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:35:16.866+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T18:35:16.866+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T18:35:16.866+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:35:16.867+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.867+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.885+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:35:16.888+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:35:16.888+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:35:16.888+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:35:16.890+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:35:16.891+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:35:16.891+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.892+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:35:16.899+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:35:16.900+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:35:16.900+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:35:16.906+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:35:16.906+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:35:16.907+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.913+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T18:35:16.913+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T18:35:16.914+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:35:16.914+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:35:16.914+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T18:35:16.914+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T18:35:16.915+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T18:35:16.916+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:35:16.916+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.916+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.916+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.933+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:35:16.935+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:35:16.946+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:35:16.946+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:35:16.947+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:35:16.947+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:35:16.947+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:35:16.947+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:35:16.949+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:35:16.949+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:35:16.950+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.950+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:35:16.951+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:35:16.956+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:35:16.957+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:35:16.957+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:35:16.957+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:35:16.958+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.959+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:35:16.962+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:35:16.962+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:35:16.962+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:35:16.962+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:35:16.962+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:35:16.963+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:35:16.968+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:35:16.975+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:35:16.977+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.179+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T18:38:29.179+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/users/me
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/users/me
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/users/me", parameters={}
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:29.180+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:29.181+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.181+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.194+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:38:29.198+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:38:29.198+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:38:29.198+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:29.214+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:29.214+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:38:29.214+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.216+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:38:29.218+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:38:29.220+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:38:29.220+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:29.222+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:29.223+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:38:29.225+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.246+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T18:38:29.247+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:38:29.247+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T18:38:29.247+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T18:38:29.248+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:38:29.250+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.292+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:38:29.292+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:38:29.310+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:38:29.310+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:38:29.310+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:38:29.310+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:38:29.310+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:38:29.310+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:38:29.316+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:29.316+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:38:29.317+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.318+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:38:29.326+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:38:29.326+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:38:29.327+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:38:29.328+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:29.330+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:29.330+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:38:29.331+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.331+01:00 DEBUG 17244 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:38:29.332+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:29.333+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:38:29.338+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:38:29.340+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:38:29.340+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:38:29.436+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:29.438+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:38:29.441+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:37.978+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:38:37.983+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:38:37.983+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:38:37.983+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:37.986+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:37.986+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:38:37.988+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:48.152+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:38:48.155+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:38:48.155+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:38:48.155+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:48.158+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:48.158+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:38:48.159+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:48.161+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:38:48.163+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:38:48.163+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:38:48.163+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:38:48.164+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:48.164+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:38:48.165+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:48.172+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:38:48.172+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:38:48.176+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:38:48.176+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:38:48.176+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:38:48.176+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:38:48.176+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:38:48.176+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:38:48.178+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:48.178+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:38:48.178+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:48.180+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:38:48.181+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:48.183+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:38:48.183+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:38:48.183+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:38:48.183+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:38:48.186+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:48.186+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:38:48.187+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:48.189+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:38:48.191+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:38:48.193+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:38:48.193+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:38:48.193+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:38:48.198+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:38:48.199+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:38:48.200+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:42:27.326+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:42:27.331+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:42:27.331+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:42:27.332+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:42:27.333+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:42:27.333+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:42:27.334+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:42:27.336+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/users/me
+2026-06-07T18:42:27.339+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/users/me
+2026-06-07T18:42:27.339+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/users/me", parameters={}
+2026-06-07T18:42:27.339+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.UserController#me(UserPrincipal)
+2026-06-07T18:42:27.342+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:42:27.342+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [MeResponse[id=1, name=David Cruz, username=dvd-cruz, email=dvd@gamevault.dev, avatar=🧑‍💻, bio=Game (truncated)...]
+2026-06-07T18:42:27.342+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:42:27.358+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:42:27.359+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:42:27.361+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:42:27.361+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:42:27.361+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:42:27.362+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:42:27.362+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:42:27.362+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:42:27.364+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:42:27.365+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:42:27.365+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:42:27.367+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:42:27.368+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:42:27.369+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:42:27.370+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:42:27.370+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:42:27.370+01:00 DEBUG 17244 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:42:27.372+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:42:27.373+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:42:27.373+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:42:27.373+01:00 DEBUG 17244 --- [nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:42:27.374+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:42:27.376+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:42:27.376+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:42:27.376+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:42:27.382+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:42:27.383+01:00 DEBUG 17244 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:42:27.383+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.545+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:44:13.545+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:44:13.548+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:44:13.548+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:44:13.548+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:44:13.548+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:44:13.548+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:44:13.548+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:44:13.551+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.551+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:44:13.552+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.554+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.554+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:44:13.555+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:44:13.556+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.556+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:44:13.558+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:44:13.558+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:44:13.558+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:44:13.561+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:44:13.561+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:44:13.561+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.561+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:44:13.561+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:44:13.563+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.567+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.569+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:44:13.570+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T18:44:13.570+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.570+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:44:13.571+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T18:44:13.571+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T18:44:13.571+01:00 DEBUG 17244 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:44:13.571+01:00 DEBUG 17244 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/games
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/games
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/games", parameters={}
+2026-06-07T18:44:13.574+01:00 DEBUG 17244 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:44:13.575+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/recommendations
+2026-06-07T18:44:13.575+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-06-07T18:44:13.575+01:00 DEBUG 17244 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.575+01:00 DEBUG 17244 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.575+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/recommendations
+2026-06-07T18:44:13.575+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/recommendations", parameters={}
+2026-06-07T18:44:13.575+01:00 DEBUG 17244 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:44:13.576+01:00 DEBUG 17244 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.582+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:44:13.583+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:44:13.585+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:44:13.585+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:44:13.585+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:44:13.585+01:00 DEBUG 17244 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:44:13.585+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:44:13.585+01:00 DEBUG 17244 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:44:13.588+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.588+01:00 DEBUG 17244 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:44:13.589+01:00 DEBUG 17244 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.589+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:44:13.593+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.593+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:44:13.593+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:44:13.593+01:00 DEBUG 17244 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:44:13.593+01:00 DEBUG 17244 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:44:13.595+01:00 DEBUG 17244 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.597+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:44:13.597+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.597+01:00 DEBUG 17244 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:44:13.598+01:00 DEBUG 17244 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:13.601+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:44:13.601+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:44:13.601+01:00 DEBUG 17244 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:44:13.608+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:13.608+01:00 DEBUG 17244 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:44:13.611+01:00 DEBUG 17244 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:14.543+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/recommendations
+2026-06-07T18:44:14.543+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/games
+2026-06-07T18:44:14.544+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/recommendations
+2026-06-07T18:44:14.544+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/recommendations", parameters={}
+2026-06-07T18:44:14.544+01:00 DEBUG 17244 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.RecommendationController#list(UserPrincipal)
+2026-06-07T18:44:14.544+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/games
+2026-06-07T18:44:14.545+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/games", parameters={}
+2026-06-07T18:44:14.545+01:00 DEBUG 17244 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.gamevault.controller.GameController#list(UserPrincipal, String, String, String, String)
+2026-06-07T18:44:14.546+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:14.546+01:00 DEBUG 17244 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2026-06-07T18:44:14.546+01:00 DEBUG 17244 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-07T18:44:14.547+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-07T18:44:14.548+01:00 DEBUG 17244 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameResponse[id=8, title=Balatro, emoji=🎮, coverUrl=null, status=wishlist, platform=PC, genre=Rogu (truncated)...]
+2026-06-07T18:44:14.548+01:00 DEBUG 17244 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
