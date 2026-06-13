@@ -41,8 +41,12 @@ public class GameCatalogService {
     }
 
     public List<CatalogGameResponse> browse(String genre, String platform, String search) {
+        // group every library entry by catalog game so community stats (rating, players) come along in the list
+        var entriesByCatalog = gameRepo.findAll().stream()
+                .filter(g -> g.getCatalogGame() != null)
+                .collect(java.util.stream.Collectors.groupingBy(g -> g.getCatalogGame().getId()));
         return catalogRepo.findFiltered(blankToNull(platform), blankToNull(genre), blankToNull(search))
-                .stream().map(CatalogGameResponse::from).toList();
+                .stream().map(c -> CatalogGameResponse.from(c, entriesByCatalog.get(c.getId()))).toList();
     }
 
     public CatalogGameResponse getById(Long id) {

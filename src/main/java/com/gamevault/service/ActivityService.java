@@ -262,6 +262,12 @@ public class ActivityService {
                 .stream().map(a -> toResponse(a, user)).toList();
     }
 
+    /** Community feed: activities from every user with a public profile (not just friends), most recent first. */
+    public List<ActivityResponse> getPublicFeed(User user) {
+        return activityRepo.findPublicFeed(user.getId())
+                .stream().map(a -> toResponse(a, user)).toList();
+    }
+
     private ActivityResponse toResponse(Activity a, User viewer) {
         long likeCount = likeRepo.countByActivityIdAndActiveTrue(a.getId());
         boolean likedByMe = viewer != null && likeRepo.existsByActivityIdAndActorIdAndActiveTrue(a.getId(), viewer.getId());

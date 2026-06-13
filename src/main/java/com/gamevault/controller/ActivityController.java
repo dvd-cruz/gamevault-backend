@@ -38,6 +38,12 @@ public class ActivityController {
         return activityService.getFriendFeed(requireUser(principal));
     }
 
+    /** Community feed — activities from all public profiles, not just friends. */
+    @GetMapping("/public-feed")
+    public List<ActivityResponse> publicFeed(@AuthenticationPrincipal UserPrincipal principal) {
+        return activityService.getPublicFeed(requireUser(principal));
+    }
+
     @GetMapping("/{id}")
     public ActivityResponse getPost(@AuthenticationPrincipal UserPrincipal principal, @PathVariable Long id) {
         return activityService.getPost(requireUser(principal), id);

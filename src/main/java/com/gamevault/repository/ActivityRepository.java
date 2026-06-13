@@ -12,6 +12,10 @@ public interface ActivityRepository extends JpaRepository<Activity, Long> {
     @Query("select a from Activity a where a.actor.id in :actorIds order by a.createdAt desc")
     List<Activity> findByActorIdInOrderByCreatedAtDesc(List<Long> actorIds);
 
+    /** Community feed: activities from users with public profiles (excluding the viewer), most recent first. */
+    @Query("select a from Activity a where a.actor.privateProfile = false and a.actor.id <> :viewerId order by a.createdAt desc")
+    List<Activity> findPublicFeed(Long viewerId);
+
     List<Activity> findByActorIdOrderByCreatedAtDesc(Long actorId);
 
     Optional<Activity> findFirstByActorIdAndCatalogGameIdAndTypeOrderByCreatedAtDesc(Long actorId, Long catalogGameId, String type);
