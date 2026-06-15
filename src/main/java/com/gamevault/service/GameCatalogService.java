@@ -174,6 +174,8 @@ public class GameCatalogService {
         catalogGame.setCoverUrl(req.coverUrl());
         catalogGame.setHeroImageUrl(req.heroImageUrl());
         catalogGame.setHeroImagePositionY(req.heroImagePositionY());
+        catalogGame.setIconUrl(req.iconUrl());
+        catalogGame.setLogoUrl(req.logoUrl());
         catalogGame.setPlatform(com.gamevault.util.PlatformUtil.normalize(req.platform()));
         catalogGame.setGenre(req.genre());
         catalogGame.setReleaseDate(req.releaseDate());

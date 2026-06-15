@@ -94,6 +94,49 @@ public class GameService {
         return saved;
     }
 
+    /** Imports a Steam account's owned games into the user's library. Existing games are skipped. */
+    @Transactional
+    public java.util.Map<String, Object> importSteamLibrary(Long userId, String steamIdInput) {
+        User owner = findUser(userId);
+        String steamId = steamService.resolveSteamId(steamIdInput);
+        var owned = steamService.fetchOwnedGames(steamId);
+        if (owned.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Nenhum jogo encontrado. O perfil Steam tem de ser público (Detalhes do jogo).");
+        }
+        int imported = 0, skipped = 0;
+        for (var g : owned) {
+            // find or create the catalog entry for this Steam app
+            GameCatalog catalog = catalogRepo.findBySteamAppId(g.appId())
+                    .orElseGet(() -> catalogRepo.findByTitleIgnoreCase(g.name()).orElse(null));
+            if (catalog == null) {
+                catalog = new GameCatalog();
+                catalog.setTitle(g.name());
+                catalog.setSteamAppId(g.appId());
+                catalog.setPlatform("PC");
+                catalog.setCoverUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + g.appId() + "/library_600x900_2x.jpg");
+                catalog.setHeroImageUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + g.appId() + "/library_hero.jpg");
+                catalog = catalogRepo.save(catalog);
+            } else if (catalog.getSteamAppId() == null) {
+                catalog.setSteamAppId(g.appId());
+                catalog = catalogRepo.save(catalog);
+            }
+            if (gameRepo.existsByOwnerIdAndCatalogGameId(userId, catalog.getId())) { skipped++; continue; }
+
+            Game game = new Game();
+            game.setCatalogGame(catalog);
+            game.setOwner(owner);
+            game.setAddedAt(System.currentTimeMillis());
+            game.setStatusUpdatedAt(game.getAddedAt());
+            // games with playtime land as "playing", untouched ones as "backlog"
+            game.setStatus(g.playtimeMinutes() > 0 ? "playing" : "backlog");
+            game.setHours(Math.round(g.playtimeMinutes() / 60.0 * 10) / 10.0);
+            gameRepo.save(game);
+            imported++;
+        }
+        return java.util.Map.of("imported", imported, "skipped", skipped, "total", owned.size());
+    }
+
     @Transactional
     public GameResponse updateGame(Long userId, Long gameId, GameRequest req) {
         Game game = findOwned(userId, gameId);

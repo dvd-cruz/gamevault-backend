@@ -24,6 +24,13 @@ public class GameCatalog {
     @Column(columnDefinition = "TEXT")
     private String heroImageUrl;
     private Integer heroImagePositionY;
+
+    @Column(columnDefinition = "TEXT")
+    private String iconUrl;
+
+    @Column(columnDefinition = "TEXT")
+    private String logoUrl;
+
     private Long steamAppId;
 
     /** PSN NP Communication ID (e.g. NPWR01408_00) — used to fetch PSN trophies */
@@ -43,6 +50,14 @@ public class GameCatalog {
     private String difficulties;
 
     private boolean hasDlc;
+
+    /* ── Price-watch snapshot — last on-sale price found for this game's linked store, refreshed by PriceWatchService ── */
+    private Integer saleDiscountPercent;
+    private Double saleFinalPrice;
+    private String saleCurrency;
+    private String saleStore;       // "Steam" or "PlayStation"
+    private String saleStoreUrl;
+    private Long salePriceCheckedAt;
 
     @OneToMany(mappedBy = "catalogGame", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Trophy> trophies = new ArrayList<>();
@@ -71,6 +86,8 @@ public class GameCatalog {
     public String getCoverUrl()    { return coverUrl; }
     public String getHeroImageUrl() { return heroImageUrl; }
     public Integer getHeroImagePositionY() { return heroImagePositionY; }
+    public String getIconUrl() { return iconUrl; }
+    public String getLogoUrl() { return logoUrl; }
     public Long getSteamAppId() { return steamAppId; }
     public String getPsnNpCommunicationId() { return psnNpCommunicationId; }
     public String getPsnProductId() { return psnProductId; }
@@ -88,6 +105,8 @@ public class GameCatalog {
     public void setCoverUrl(String coverUrl)       { this.coverUrl = coverUrl; }
     public void setHeroImageUrl(String heroImageUrl) { this.heroImageUrl = heroImageUrl; }
     public void setHeroImagePositionY(Integer heroImagePositionY) { this.heroImagePositionY = heroImagePositionY; }
+    public void setIconUrl(String iconUrl) { this.iconUrl = iconUrl; }
+    public void setLogoUrl(String logoUrl) { this.logoUrl = logoUrl; }
     public void setSteamAppId(Long steamAppId) { this.steamAppId = steamAppId; }
     public void setPsnNpCommunicationId(String id) { this.psnNpCommunicationId = id; }
     public void setPsnProductId(String id) { this.psnProductId = id; }
@@ -99,4 +118,18 @@ public class GameCatalog {
     public void setDescription(String description) { this.description = description; }
     public void setDifficulties(String difficulties) { this.difficulties = difficulties; }
     public void setHasDlc(boolean hasDlc)             { this.hasDlc = hasDlc; }
+
+    public Integer getSaleDiscountPercent() { return saleDiscountPercent; }
+    public Double getSaleFinalPrice()       { return saleFinalPrice; }
+    public String getSaleCurrency()         { return saleCurrency; }
+    public String getSaleStore()            { return saleStore; }
+    public String getSaleStoreUrl()         { return saleStoreUrl; }
+    public Long getSalePriceCheckedAt()     { return salePriceCheckedAt; }
+
+    public void setSaleDiscountPercent(Integer v) { this.saleDiscountPercent = v; }
+    public void setSaleFinalPrice(Double v)       { this.saleFinalPrice = v; }
+    public void setSaleCurrency(String v)         { this.saleCurrency = v; }
+    public void setSaleStore(String v)            { this.saleStore = v; }
+    public void setSaleStoreUrl(String v)         { this.saleStoreUrl = v; }
+    public void setSalePriceCheckedAt(Long v)     { this.salePriceCheckedAt = v; }
 }

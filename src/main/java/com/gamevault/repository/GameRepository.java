@@ -12,6 +12,10 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 
     List<Game> findByOwnerIdOrderByAddedAtDesc(Long ownerId);
 
+    /** Distinct catalog game ids that at least one user has on their wishlist. */
+    @Query("select distinct g.catalogGame.id from Game g where g.status = 'wishlist' and g.catalogGame is not null")
+    List<Long> findWishlistedCatalogIds();
+
     @Query(value = """
             SELECT g.* FROM games g
             JOIN game_catalog c ON c.id = g.catalog_game_id

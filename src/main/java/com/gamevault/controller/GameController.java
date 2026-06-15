@@ -49,6 +49,14 @@ public class GameController {
         return gameService.addToLibrary(principal.getId(), req);
     }
 
+    /** Bulk-imports a Steam account's owned games into the user's library. */
+    @PostMapping("/import/steam")
+    public java.util.Map<String, Object> importSteam(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @RequestBody java.util.Map<String, String> body) {
+        return gameService.importSteamLibrary(principal.getId(), body.get("steamId"));
+    }
+
     @PutMapping("/{id}")
     public GameResponse update(
             @AuthenticationPrincipal UserPrincipal principal,

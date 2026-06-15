@@ -100,6 +100,29 @@ public class NotificationService {
             ));
         }
 
+        /* wishlist games currently on sale — snapshot kept fresh by PriceWatchService.
+           The id encodes the discount so a deeper discount re-notifies (read state is per-id). */
+        for (Game g : gameRepo.findByOwnerIdOrderByAddedAtDesc(user.getId())) {
+            if (!"wishlist".equals(g.getStatus()) || g.getCatalogGame() == null) continue;
+            var c = g.getCatalogGame();
+            Integer discount = c.getSaleDiscountPercent();
+            if (discount == null || discount <= 0) continue;
+            String price = c.getSaleFinalPrice() != null
+                    ? String.format("%.2f%s", c.getSaleFinalPrice(), c.getSaleCurrency() != null ? " " + c.getSaleCurrency() : "")
+                    : null;
+            String msg = "está -" + discount + "% na " + c.getSaleStore()
+                    + (price != null ? " — agora " + price : "") + " 🏷️";
+            result.add(new NotificationResponse(
+                    "pricedrop-" + c.getId() + "-" + discount,
+                    "price_drop",
+                    c.getSalePriceCheckedAt() != null ? c.getSalePriceCheckedAt() : now,
+                    null, c.getTitle(), c.getCoverUrl(),
+                    msg,
+                    null, c.getId(), c.getTitle(),
+                    null
+            ));
+        }
+
         result.sort(Comparator.comparing(NotificationResponse::at).reversed());
         return result;
     }

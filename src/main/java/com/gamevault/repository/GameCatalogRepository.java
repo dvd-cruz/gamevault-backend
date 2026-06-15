@@ -14,6 +14,12 @@ public interface GameCatalogRepository extends JpaRepository<GameCatalog, Long> 
 
     Optional<GameCatalog> findByTitleIgnoreCase(String title);
 
+    Optional<GameCatalog> findBySteamAppId(Long steamAppId);
+
+    /** Catalog games linked to a store, so their current price can be checked. */
+    @Query("select c from GameCatalog c where c.steamAppId is not null or c.psnProductId is not null")
+    List<GameCatalog> findWithStoreId();
+
     @Query(value = """
             SELECT * FROM game_catalog
             WHERE (CAST(:platform AS varchar) IS NULL

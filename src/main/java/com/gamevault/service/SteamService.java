@@ -124,6 +124,62 @@ public class SteamService {
         }
     }
 
+    /* ── Owned games (library import) ── */
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    private record OwnedGame(Long appid, String name, Long playtime_forever) {}
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    private record OwnedGames(List<OwnedGame> games) {}
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    private record OwnedGamesResponse(OwnedGames response) {}
+
+    /** A game owned on Steam: appId, title, and total playtime in minutes. */
+    public record SteamOwnedGame(Long appId, String name, long playtimeMinutes) {}
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    private record VanityResult(String steamid, Integer success) {}
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    private record VanityResponse(VanityResult response) {}
+
+    /** Resolves a vanity URL name (e.g. "gabelogan") to a 64-bit steamId. Returns the input if already numeric. */
+    public String resolveSteamId(String input) {
+        if (input == null || input.isBlank()) throw new IllegalArgumentException("steamId em falta");
+        String s = input.trim();
+        if (s.matches("\\d{17}")) return s; // already a steamID64
+        if (!isConfigured()) throw new IllegalStateException("Steam API key não está configurada no servidor");
+        VanityResponse resp = restClient.get()
+                .uri(uri -> uri.path("/ISteamUser/ResolveVanityURL/v0001/")
+                        .queryParam("key", apiKey)
+                        .queryParam("vanityurl", s)
+                        .build())
+                .retrieve()
+                .body(VanityResponse.class);
+        if (resp != null && resp.response() != null && Integer.valueOf(1).equals(resp.response().success())
+                && resp.response().steamid() != null) {
+            return resp.response().steamid();
+        }
+        throw new IllegalArgumentException("Não foi possível encontrar esse utilizador Steam");
+    }
+
+    /** All games owned by the given steamId (requires a public profile/game details). */
+    public List<SteamOwnedGame> fetchOwnedGames(String steamId) {
+        if (!isConfigured()) throw new IllegalStateException("Steam API key não está configurada no servidor");
+        OwnedGamesResponse resp = restClient.get()
+                .uri(uri -> uri.path("/IPlayerService/GetOwnedGames/v1/")
+                        .queryParam("key", apiKey)
+                        .queryParam("steamid", steamId)
+                        .queryParam("include_appinfo", "true")
+                        .queryParam("include_played_free_games", "true")
+                        .queryParam("format", "json")
+                        .build())
+                .retrieve()
+                .body(OwnedGamesResponse.class);
+        if (resp == null || resp.response() == null || resp.response().games() == null) return List.of();
+        return resp.response().games().stream()
+                .filter(g -> g.appid() != null && g.name() != null && !g.name().isBlank())
+                .map(g -> new SteamOwnedGame(g.appid(), g.name(), g.playtime_forever() != null ? g.playtime_forever() : 0L))
+                .toList();
+    }
+
     /**
      * Derives a PSN-style rarity tier (0=Ultra Rare, 1=Very Rare, 2=Rare, 3=Common) from a
      * Steam global unlock percentage, so Steam achievements can be displayed with the same

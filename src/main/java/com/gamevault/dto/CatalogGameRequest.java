@@ -12,6 +12,8 @@ public record CatalogGameRequest(
         String coverUrl,
         String heroImageUrl,
         Integer heroImagePositionY,
+        String iconUrl,
+        String logoUrl,
         String platform,
         String genre,
         Long releaseDate,

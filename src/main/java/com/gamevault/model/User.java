@@ -42,6 +42,10 @@ public class User {
     @Column(nullable = false)
     private boolean privateProfile = false;
 
+    /** Suspended by a moderator — cannot log in. */
+    @Column(nullable = false)
+    private boolean suspended = false;
+
     @ManyToMany
     @JoinTable(
             name = "user_favorite_franchises",
@@ -80,6 +84,8 @@ public class User {
     public void setAdmin(boolean admin)      { this.admin = admin; }
     public boolean isPrivateProfile()               { return privateProfile; }
     public void setPrivateProfile(boolean privateProfile) { this.privateProfile = privateProfile; }
+    public boolean isSuspended()                    { return suspended; }
+    public void setSuspended(boolean suspended)     { this.suspended = suspended; }
 
     public java.util.List<Franchise> getFavoriteFranchises() { return favoriteFranchises; }
     public void setFavoriteFranchises(java.util.List<Franchise> favoriteFranchises) { this.favoriteFranchises = favoriteFranchises; }

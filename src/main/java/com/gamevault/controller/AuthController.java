@@ -68,6 +68,9 @@ public class AuthController {
         User u = userRepo.findByUsername(req.username())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciais inválidas"));
 
+        if (u.isSuspended())
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "A tua conta foi suspensa por um moderador.");
+
         UserPrincipal principal = new UserPrincipal(u.getId(), u.getUsername(), u.getPassword());
         String token = jwtService.generateToken(principal);
 

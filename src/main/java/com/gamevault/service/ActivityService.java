@@ -201,7 +201,7 @@ public class ActivityService {
         if (!"post".equals(activity.getType())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Esta atividade não é uma publicação");
         }
-        if (!activity.getActor().getId().equals(viewer.getId())) {
+        if (!activity.getActor().getId().equals(viewer.getId()) && !viewer.isAdmin()) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Não podes apagar a publicação de outra pessoa");
         }
         likeRepo.deleteByActivityId(activityId);
@@ -345,7 +345,7 @@ public class ActivityService {
         Activity activity = findActivity(activityId);
         Comment comment = commentRepo.findById(commentId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Comentário não encontrado"));
-        if (!comment.getActor().getId().equals(viewer.getId())) {
+        if (!comment.getActor().getId().equals(viewer.getId()) && !viewer.isAdmin()) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Não podes apagar o comentário de outra pessoa");
         }
         commentRepo.delete(comment);

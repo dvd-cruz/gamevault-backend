@@ -27,6 +27,17 @@ public class Report {
     @Column(nullable = false)
     private Long createdAt;
 
+    @Column(nullable = false)
+    private boolean resolved = false;
+
+    private Long resolvedAt;
+
+    /** When reporting a post: the activity id and a snapshot of its content (survives deletion). */
+    private Long activityId;
+
+    @Column(columnDefinition = "TEXT")
+    private String contentSnapshot;
+
     public Report() {}
 
     public Long getId()           { return id; }
@@ -35,10 +46,18 @@ public class Report {
     public String getReason()     { return reason; }
     public String getDescription(){ return description; }
     public Long getCreatedAt()    { return createdAt; }
+    public boolean isResolved()   { return resolved; }
+    public Long getResolvedAt()   { return resolvedAt; }
+    public Long getActivityId()   { return activityId; }
+    public String getContentSnapshot() { return contentSnapshot; }
 
     public void setReporter(User reporter)       { this.reporter = reporter; }
     public void setReported(User reported)       { this.reported = reported; }
     public void setReason(String reason)         { this.reason = reason; }
     public void setDescription(String description) { this.description = description; }
     public void setCreatedAt(Long createdAt)     { this.createdAt = createdAt; }
+    public void setResolved(boolean resolved)    { this.resolved = resolved; }
+    public void setResolvedAt(Long resolvedAt)   { this.resolvedAt = resolvedAt; }
+    public void setActivityId(Long activityId)   { this.activityId = activityId; }
+    public void setContentSnapshot(String s)     { this.contentSnapshot = s; }
 }

@@ -11,6 +11,8 @@ public record CatalogGameResponse(
         String coverUrl,
         String heroImageUrl,
         Integer heroImagePositionY,
+        String iconUrl,
+        String logoUrl,
         String platform,
         String genre,
         Long releaseDate,
@@ -29,6 +31,11 @@ public record CatalogGameResponse(
         Integer avgCompletionHoursCount,
         Integer playerCount,
         Integer completedCount,
+        Integer saleDiscountPercent,
+        Double saleFinalPrice,
+        String saleCurrency,
+        String saleStore,
+        String saleStoreUrl,
         List<FranchiseResponse> franchises
 ) {
     public static CatalogGameResponse from(GameCatalog c) {
@@ -73,6 +80,8 @@ public record CatalogGameResponse(
                 c.getCoverUrl(),
                 c.getHeroImageUrl(),
                 c.getHeroImagePositionY(),
+                c.getIconUrl(),
+                c.getLogoUrl(),
                 c.getPlatform(),
                 c.getGenre(),
                 c.getReleaseDate(),
@@ -91,6 +100,11 @@ public record CatalogGameResponse(
                 avgCompletionHoursCount,
                 playerCount,
                 completedCount,
+                c.getSaleDiscountPercent(),
+                c.getSaleFinalPrice(),
+                c.getSaleCurrency(),
+                c.getSaleStore(),
+                c.getSaleStoreUrl(),
                 c.getFranchises().stream().map(f -> FranchiseResponse.summary(f, false)).toList()
         );
     }

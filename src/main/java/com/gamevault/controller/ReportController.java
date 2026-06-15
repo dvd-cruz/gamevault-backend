@@ -25,4 +25,39 @@ public class ReportController {
                         @Valid @RequestBody ReportRequest req) {
         reportService.report(principal.getId(), username, req);
     }
+
+    /** Report a specific post/activity (covers its text and images). */
+    @PostMapping("/post/{activityId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void reportPost(@AuthenticationPrincipal UserPrincipal principal,
+                           @PathVariable Long activityId,
+                           @Valid @RequestBody ReportRequest req) {
+        reportService.reportPost(principal.getId(), activityId, req);
+    }
+
+    /** Admin: moderation queue (unresolved first). */
+    @GetMapping
+    public java.util.List<com.gamevault.dto.ReportResponse> list(@AuthenticationPrincipal UserPrincipal principal) {
+        return reportService.listReports(principal.getId());
+    }
+
+    /** Admin: mark a report resolved/unresolved. */
+    @PostMapping("/{id}/resolve")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void resolve(@AuthenticationPrincipal UserPrincipal principal,
+                        @PathVariable Long id,
+                        @RequestBody(required = false) java.util.Map<String, Object> body) {
+        boolean resolved = body == null || body.get("resolved") == null || Boolean.TRUE.equals(body.get("resolved"));
+        reportService.resolveReport(principal.getId(), id, resolved);
+    }
+
+    /** Admin: suspend or reinstate a user. */
+    @PostMapping("/users/{username}/suspend")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void suspend(@AuthenticationPrincipal UserPrincipal principal,
+                        @PathVariable String username,
+                        @RequestBody(required = false) java.util.Map<String, Object> body) {
+        boolean suspended = body == null || body.get("suspended") == null || Boolean.TRUE.equals(body.get("suspended"));
+        reportService.setSuspended(principal.getId(), username, suspended);
+    }
 }

@@ -29,11 +29,13 @@ public class DataSeeder implements CommandLineRunner {
     private final FriendshipRepository  friendshipRepo;
     private final ActivityRepository    activityRepo;
     private final FranchiseRepository   franchiseRepo;
+    private final com.gamevault.repository.CalendarEventRepository calendarRepo;
     private final PasswordEncoder       passwordEncoder;
 
     public DataSeeder(UserRepository userRepo, GameRepository gameRepo, GameListRepository listRepo,
                       GameCatalogRepository catalogRepo, FriendshipRepository friendshipRepo,
-                      ActivityRepository activityRepo, FranchiseRepository franchiseRepo, PasswordEncoder passwordEncoder) {
+                      ActivityRepository activityRepo, FranchiseRepository franchiseRepo,
+                      com.gamevault.repository.CalendarEventRepository calendarRepo, PasswordEncoder passwordEncoder) {
         this.userRepo = userRepo;
         this.gameRepo = gameRepo;
         this.listRepo = listRepo;
@@ -41,6 +43,7 @@ public class DataSeeder implements CommandLineRunner {
         this.friendshipRepo = friendshipRepo;
         this.activityRepo = activityRepo;
         this.franchiseRepo = franchiseRepo;
+        this.calendarRepo = calendarRepo;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -125,13 +128,13 @@ public class DataSeeder implements CommandLineRunner {
         GameCatalog persona5Catalog   = catalog("Persona 5 Royal", "🎭", null, "PC", "JRPG");
         // Catalog-only titles — registered but not yet in anyone's library (proves catalog ≠ library)
         // Released/trending titles (used by the Discover page "Em alta" / "Recomendado" sections)
-        catalog("Balatro", "🃏", null, "PC", "Roguelite",
+        GameCatalog balatroCatalog = catalog("Balatro", "🃏", null, "PC", "Roguelite",
                 date(2024, 2, 20), "LocalThunk", "Playstack",
                 "Um jogo de cartas roguelite que redefine o género. Impossível de parar.");
         catalog("Black Myth: Wukong", "🐒", null, "PS5 / PC", "Action RPG",
                 date(2024, 8, 20), "Game Science", "Game Science",
                 "Uma produção chinesa que chegou para surpreender o mundo inteiro.");
-        catalog("Disco Elysium", "🕵️", null, "PC", "RPG",
+        GameCatalog discoElysiumCatalog = catalog("Disco Elysium", "🕵️", null, "PC", "RPG",
                 date(2019, 10, 15), "ZA/UM", "ZA/UM",
                 "Mais livro interativo do que jogo — e isso é um elogio. Uma obra-prima da escrita.");
         catalog("Monster Hunter Wilds", "🐉", null, "PC / PS5", "Action RPG",
@@ -175,12 +178,16 @@ public class DataSeeder implements CommandLineRunner {
                 "A primeira aventura open-zone do Sonic, explorando as Starfall Islands.");
 
         // Cover + hero art for David's library games (Steam CDN; Zelda from Wikipedia — not on Steam)
-        art(hadesCatalog,        "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_600x900_2x.jpg", "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg");
-        art(eldenRingCatalog,    "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900_2x.jpg", "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_hero.jpg");
-        art(hollowKnightCat,     "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_600x900_2x.jpg",  "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_hero.jpg");
-        art(cyberpunkCatalog,    "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_600x900_2x.jpg", "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg");
-        art(sonicFrontiersCatalog,"https://cdn.cloudflare.steamstatic.com/steam/apps/1237320/library_600x900_2x.jpg","https://cdn.cloudflare.steamstatic.com/steam/apps/1237320/library_hero.jpg");
+        steamArt(hadesCatalog,         1145360L);
+        steamArt(eldenRingCatalog,     1245620L);
+        steamArt(hollowKnightCat,      367520L);
+        steamArt(cyberpunkCatalog,     1091500L);
+        steamArt(sonicFrontiersCatalog, 1237320L);
         art(zeldaTotkCatalog,    "https://upload.wikimedia.org/wikipedia/en/f/fb/The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg", null);
+        // a few catalog-only titles linked to Steam so the "Em promoção" section has more candidates
+        steamArt(balatroCatalog,       2379780L);
+        steamArt(discoElysiumCatalog,  632470L);
+        steamArt(hadesIICatalog,       1145350L);
 
         // Franchises — group multiple catalog games together
         franchise("Sonic", sonicGenerationsCatalog, sonicForcesCatalog, sonicFrontiersCatalog);
@@ -414,8 +421,28 @@ public class DataSeeder implements CommandLineRunner {
         ));
         listRepo.save(roguelites);
 
+        // ── Calendar events (recurring gaming anniversaries) ──
+        calendarEvent("🍄", "MAR10 Day — dia do Mario", 3, 10);
+        calendarEvent("💙", "Aniversário do Sonic the Hedgehog (1991)", 6, 23);
+        calendarEvent("🗡️", "Aniversário de The Legend of Zelda (1986)", 2, 21);
+        calendarEvent("⚡", "Aniversário de Pokémon (1996)", 2, 27);
+        calendarEvent("🎮", "Aniversário da Famicom (1983)", 7, 15);
+        calendarEvent("🌀", "Aniversário da Dreamcast (1999)", 9, 9);
+        calendarEvent("🕹️", "Aniversário da NES na América do Norte (1985)", 10, 18);
+        calendarEvent("🟢", "Aniversário da Xbox (2001)", 11, 15);
+        calendarEvent("⛏️", "Lançamento de Minecraft (2011)", 11, 18);
+        calendarEvent("🎮", "Aniversário da PlayStation (1994)", 12, 3);
+
         log.info("Seed complete — users: {}, games: {}, lists: {}",
                 userRepo.count(), gameRepo.count(), listRepo.count());
+    }
+
+    private void calendarEvent(String emoji, String label, int month, int day) {
+        com.gamevault.model.CalendarEvent e = new com.gamevault.model.CalendarEvent();
+        e.setEmoji(emoji); e.setLabel(label); e.setMonth(month); e.setDay(day);
+        e.setYear(null); // recurring
+        e.setCreatedAt(System.currentTimeMillis());
+        calendarRepo.save(e);
     }
 
     // ── helpers ──────────────────────────────────────────────────────────────
@@ -432,6 +459,14 @@ public class DataSeeder implements CommandLineRunner {
     private GameCatalog art(GameCatalog c, String coverUrl, String heroImageUrl) {
         c.setCoverUrl(coverUrl);
         c.setHeroImageUrl(heroImageUrl);
+        return catalogRepo.save(c);
+    }
+
+    /** Links a catalog game to its Steam app: sets the app id plus cover/hero from the Steam CDN. */
+    private GameCatalog steamArt(GameCatalog c, long appId) {
+        c.setSteamAppId(appId);
+        c.setCoverUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + appId + "/library_600x900_2x.jpg");
+        c.setHeroImageUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + appId + "/library_hero.jpg");
         return catalogRepo.save(c);
     }
 
