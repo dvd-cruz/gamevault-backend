@@ -31,8 +31,12 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/uploads/**")
-                .addResourceLocations(storage.getUploadsDir().toUri().toString())
-                .setCachePeriod(60 * 60 * 24 * 365);
+        // Only needed in disk mode; in R2 mode images are served from R2's public URL.
+        java.nio.file.Path dir = storage.getUploadsDir();
+        if (dir != null) {
+            registry.addResourceHandler("/uploads/**")
+                    .addResourceLocations(dir.toUri().toString())
+                    .setCachePeriod(60 * 60 * 24 * 365);
+        }
     }
 }
