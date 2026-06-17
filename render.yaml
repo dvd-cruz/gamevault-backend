@@ -1,0 +1,39 @@
+# Render Blueprint — cria o backend Spring Boot + PostgreSQL.
+# Deploy: https://dashboard.render.com  ->  New  ->  Blueprint  ->  aponta para este repo.
+databases:
+  - name: gamevault-db
+    plan: free
+    databaseName: gamevault
+    user: gamevault
+
+services:
+  - type: web
+    name: gamevault-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    region: frankfurt
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: postgres
+      # ── Base de dados (preenchido automaticamente a partir de gamevault-db) ──
+      - key: DB_HOST
+        fromDatabase: { name: gamevault-db, property: host }
+      - key: DB_PORT
+        fromDatabase: { name: gamevault-db, property: port }
+      - key: DB_NAME
+        fromDatabase: { name: gamevault-db, property: database }
+      - key: DATABASE_USER
+        fromDatabase: { name: gamevault-db, property: user }
+      - key: DATABASE_PASSWORD
+        fromDatabase: { name: gamevault-db, property: password }
+      # ── Segredos: definir no dashboard (sync:false = nao fica no repo) ──
+      - key: JWT_SECRET
+        sync: false
+      - key: STEAM_API_KEY
+        sync: false
+      # ── Producao ──
+      - key: SEED_ENABLED
+        value: "false"
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://gamevault.cc
