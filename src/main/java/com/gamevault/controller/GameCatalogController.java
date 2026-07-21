@@ -86,6 +86,14 @@ public class GameCatalogController {
         catalogService.delete(principal.getId(), id);
     }
 
+    /** Bulk-import a Steam library into the catalog only (admin). */
+    @PostMapping("/import/steam")
+    public java.util.Map<String, Object> importSteam(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @RequestBody java.util.Map<String, String> body) {
+        return catalogService.importSteamToCatalog(principal.getId(), body.get("steamId"));
+    }
+
     @PostMapping("/{id}/trophies")
     @ResponseStatus(HttpStatus.CREATED)
     public CatalogGameResponse addTrophy(

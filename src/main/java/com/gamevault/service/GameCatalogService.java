@@ -155,6 +155,44 @@ public class GameCatalogService {
     }
 
     /**
+     * Bulk-imports a Steam user's owned games into the CATALOG ONLY (admin) — does not touch anyone's
+     * library. Find-or-create by Steam App ID (falls back to title), backfilling the App ID on existing
+     * entries and pulling cover/hero art from the Steam CDN. Returns {added, skipped, total}.
+     */
+    @Transactional
+    public java.util.Map<String, Object> importSteamToCatalog(Long userId, String steamIdInput) {
+        requireAdmin(userId, "Apenas administradores podem importar para o catálogo");
+        String steamId = steamService.resolveSteamId(steamIdInput);
+        var owned = steamService.fetchOwnedGames(steamId);
+        if (owned.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Nenhum jogo encontrado. O perfil Steam tem de ser público (Detalhes do jogo).");
+        }
+        int added = 0, skipped = 0;
+        for (var g : owned) {
+            GameCatalog existing = catalogRepo.findBySteamAppId(g.appId())
+                    .orElseGet(() -> catalogRepo.findByTitleIgnoreCase(g.name()).orElse(null));
+            if (existing != null) {
+                if (existing.getSteamAppId() == null) {
+                    existing.setSteamAppId(g.appId());
+                    catalogRepo.save(existing);
+                }
+                skipped++;
+                continue;
+            }
+            GameCatalog catalog = new GameCatalog();
+            catalog.setTitle(g.name());
+            catalog.setSteamAppId(g.appId());
+            catalog.setPlatform("PC");
+            catalog.setCoverUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + g.appId() + "/library_600x900_2x.jpg");
+            catalog.setHeroImageUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + g.appId() + "/library_hero.jpg");
+            catalogRepo.save(catalog);
+            added++;
+        }
+        return java.util.Map.of("added", added, "skipped", skipped, "total", owned.size());
+    }
+
+    /**
      * Auto-registers the catalog's Conquistas list from Steam's achievement schema for the
      * configured Steam App ID, so the trophy list exists globally as soon as an admin links
      * the game to Steam — individual users can later sync their personal unlock status, or
