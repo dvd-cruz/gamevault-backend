@@ -78,6 +78,14 @@ public class GameCatalogController {
         return catalogService.update(principal.getId(), id, req);
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @PathVariable Long id) {
+        catalogService.delete(principal.getId(), id);
+    }
+
     @PostMapping("/{id}/trophies")
     @ResponseStatus(HttpStatus.CREATED)
     public CatalogGameResponse addTrophy(

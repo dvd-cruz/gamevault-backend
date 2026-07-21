@@ -130,6 +130,31 @@ public class GameCatalogService {
     }
 
     /**
+     * Removes a game from the catalog (admin only). Trophies and DLCs cascade; franchise links are cleared.
+     * Refuses to delete if the game is still referenced by any library entry, activity, event or tier list,
+     * so we never orphan users' data — the admin must remove those first.
+     */
+    @Transactional
+    public void delete(Long userId, Long catalogGameId) {
+        requireAdmin(userId, "Apenas administradores podem apagar jogos do catálogo");
+        GameCatalog catalogGame = findCatalogGame(catalogGameId);
+
+        if (!gameRepo.findByCatalogGameId(catalogGameId).isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "Não é possível apagar: este jogo está na biblioteca de um ou mais utilizadores.");
+        }
+
+        catalogGame.getFranchises().clear(); // remove os vínculos M2M (mantém as franchises)
+        try {
+            catalogRepo.delete(catalogGame); // cascateia troféus + DLCs
+            catalogRepo.flush();             // força já as verificações de FK para as podermos converter
+        } catch (org.springframework.dao.DataIntegrityViolationException e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "Não é possível apagar: este jogo está a ser usado (atividade, eventos ou listas).");
+        }
+    }
+
+    /**
      * Auto-registers the catalog's Conquistas list from Steam's achievement schema for the
      * configured Steam App ID, so the trophy list exists globally as soon as an admin links
      * the game to Steam — individual users can later sync their personal unlock status, or
