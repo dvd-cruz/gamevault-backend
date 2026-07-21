@@ -239,6 +239,30 @@ public class SteamService {
      * "dlc" appid list, then resolves each one's name/cover/price from the Store API.
      * Returns an empty list if the base game has no DLCs or the lookup fails.
      */
+    /**
+     * Fetches the display name for a Steam app from the public Store API (no API key required).
+     * Returns null if the app doesn't exist / has no store page.
+     */
+    public String fetchAppName(Long appId) {
+        try {
+            JsonNode root = storeClient.get()
+                    .uri(uri -> uri.path("/appdetails")
+                            .queryParam("appids", appId)
+                            .queryParam("filters", "basic")
+                            .queryParam("l", "english")
+                            .build())
+                    .retrieve()
+                    .body(JsonNode.class);
+            if (root == null) return null;
+            JsonNode entry = root.get(String.valueOf(appId));
+            if (entry == null || !entry.path("success").asBoolean(false)) return null;
+            String name = entry.path("data").path("name").asText(null);
+            return (name == null || name.isBlank()) ? null : name;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     public List<SteamDlcInfo> fetchDlcs(Long appId) {
         JsonNode root = storeClient.get()
                 .uri(uri -> uri.path("/appdetails")

@@ -193,6 +193,47 @@ public class GameCatalogService {
     }
 
     /**
+     * Bulk-imports catalog entries from a free-text list of Steam App IDs (admin). Needs no SteamID or
+     * API key — the public Store API provides the name. Find-or-create by App ID; art from the CDN.
+     * Returns {added, skipped, failed, total}.
+     */
+    @Transactional
+    public java.util.Map<String, Object> importSteamAppIds(Long userId, String appIdsText) {
+        requireAdmin(userId, "Apenas administradores podem importar para o catálogo");
+        if (appIdsText == null || appIdsText.isBlank()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Indica pelo menos um App ID.");
+        }
+        java.util.LinkedHashSet<Long> appIds = new java.util.LinkedHashSet<>();
+        java.util.regex.Matcher m = java.util.regex.Pattern.compile("\\d+").matcher(appIdsText);
+        while (m.find()) appIds.add(Long.parseLong(m.group()));
+        if (appIds.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Nenhum App ID válido encontrado.");
+        }
+
+        int added = 0, skipped = 0, failed = 0;
+        for (Long appId : appIds) {
+            if (catalogRepo.findBySteamAppId(appId).isPresent()) { skipped++; continue; }
+            String name = steamService.fetchAppName(appId);
+            if (name == null) { failed++; continue; } // app inexistente / sem página na loja
+            GameCatalog existing = catalogRepo.findByTitleIgnoreCase(name).orElse(null);
+            if (existing != null) {
+                if (existing.getSteamAppId() == null) { existing.setSteamAppId(appId); catalogRepo.save(existing); }
+                skipped++;
+                continue;
+            }
+            GameCatalog catalog = new GameCatalog();
+            catalog.setTitle(name);
+            catalog.setSteamAppId(appId);
+            catalog.setPlatform("PC");
+            catalog.setCoverUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + appId + "/library_600x900_2x.jpg");
+            catalog.setHeroImageUrl("https://cdn.cloudflare.steamstatic.com/steam/apps/" + appId + "/library_hero.jpg");
+            catalogRepo.save(catalog);
+            added++;
+        }
+        return java.util.Map.of("added", added, "skipped", skipped, "failed", failed, "total", appIds.size());
+    }
+
+    /**
      * Auto-registers the catalog's Conquistas list from Steam's achievement schema for the
      * configured Steam App ID, so the trophy list exists globally as soon as an admin links
      * the game to Steam — individual users can later sync their personal unlock status, or

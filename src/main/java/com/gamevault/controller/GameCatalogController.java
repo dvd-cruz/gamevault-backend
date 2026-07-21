@@ -94,6 +94,14 @@ public class GameCatalogController {
         return catalogService.importSteamToCatalog(principal.getId(), body.get("steamId"));
     }
 
+    /** Bulk-import catalog entries from a free-text list of Steam App IDs (admin). */
+    @PostMapping("/import/steam-appids")
+    public java.util.Map<String, Object> importSteamAppIds(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @RequestBody java.util.Map<String, String> body) {
+        return catalogService.importSteamAppIds(principal.getId(), body.get("appIds"));
+    }
+
     @PostMapping("/{id}/trophies")
     @ResponseStatus(HttpStatus.CREATED)
     public CatalogGameResponse addTrophy(
